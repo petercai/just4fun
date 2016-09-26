@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="grandpa" class="cai.peter.familytree.Person">
+    	<property name="name" value="Grandpa"></property>
+    	<property name="spouse" ref="grandma"></property>
+    	<property name="children">
+    		<list>
+    		<ref bean="father_1" />
+    		</list>
+    	</property>
+    </bean>
+    <bean id="grandma" class="cai.peter.familytree.Person">
+    	<property name="name" value="Grandma"></property>
+    </bean>
+    <bean id="father_1" class="cai.peter.familytree.Person">
+    	<property name="father" ref="grandpa"></property>
+    	<property name="mother" ref="grandma"></property>
+    	<property name="spouse" ref="mother_1"></property>
+    	<property name="name" value="father_1"></property>
+    </bean>
+    <bean id="mother_1" class="cai.peter.familytree.Person">
+    	<property name="spouse" ref="father_1"></property>
+    	<property name="name" value="mother_1"></property>
+    </bean>
+    <bean id="child_1_1" class="cai.peter.familytree.Person">
+    	<property name="name" value="chile_1_1"></property>
+    	<property name="mother" ref="mother_1"></property>
+    	<property name="father" ref="father_1"></property>
+    </bean>
+</beans>
