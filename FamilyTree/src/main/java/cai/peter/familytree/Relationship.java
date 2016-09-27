@@ -2,6 +2,7 @@ package cai.peter.familytree;
 
 public enum Relationship
 {
+	ME,
 	SPOUSE,
 	MOTHER,
 	FATHER,
@@ -9,5 +10,5 @@ public enum Relationship
 	GRANDPARENT,
 	CHILD,
 	GRANDCHILD,
-	OTHER
+	OTHER;
 }

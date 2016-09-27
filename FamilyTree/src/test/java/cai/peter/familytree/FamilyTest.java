@@ -19,9 +19,31 @@ public class FamilyTest
 	private static final Logger	logger	= Logger.getLogger(FamilyTest.class);
 	@Autowired
 	Person grandpa;
+	@Autowired
+	Person father_1;
+	@Autowired
+	Person mother_1;
+	@Autowired
+	Person child_1_1;
+
 	@Test
-	public void test()
+	public void testGrandpa()
 	{
-		logger.info(grandpa.getName());
+	    grandpa.getFamilyTree();
+	}
+	@Test
+	public void testFather1()
+	{
+	    father_1.getFamilyTree();
+	}
+	@Test
+	public void testmother_1()
+	{
+		mother_1.getFamilyTree();
+	}
+	@Test
+	public void testChild11()
+	{
+	    child_1_1.getFamilyTree();
 	}
 }
